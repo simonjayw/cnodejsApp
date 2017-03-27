@@ -2,16 +2,16 @@
   <transition name="slide-fade">
     <nav class="menu_nav">
       <div class="menu_list">
-        <v-touch class="menu_item" @tap="gowhere('1')">
+        <v-touch class="menu_item" @tap="gowhere('/index', '全部')">
           全部
         </v-touch>
-        <v-touch class="menu_item" @tap="gowhere('2')">
+        <v-touch class="menu_item" @tap="gowhere('/essence', '精华')">
           精华
         </v-touch>
-        <v-touch class="menu_item" @tap="gowhere('3')">
+        <v-touch class="menu_item" @tap="gowhere('/share', '分享')">
           分享
         </v-touch>
-        <v-touch class="menu_item" @tap="gowhere('4')">
+        <v-touch class="menu_item" @tap="gowhere('/qa', '问答')">
           问答
         </v-touch>
       </div>
@@ -27,8 +27,9 @@ export default {
     }
   },
   methods: {
-    gowhere: function (add) {
-      console.log(add)
+    gowhere: function (routers, title) {
+      this.$router.push({ path: routers })
+      this.$store.commit('UPDATE_HEADTITLE', title)
     }
   }
 }
@@ -42,11 +43,11 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 0.8rem;
+    height: 1rem;
     text-align: center;
     box-shadow: 0 -1px 3px #ddd;
     background: #fff;
-    z-index: 999;
+    z-index: 50;
   }
   .menu_list {
     display: flex;
@@ -58,7 +59,7 @@ export default {
     .menu_item {
       flex: 1;
       height: 100%;
-      line-height: 0.8rem;
+      line-height: 1rem;
 
     }
   }
@@ -69,7 +70,7 @@ export default {
     transition: all 0.8s ease;
   }
   .slide-fade-enter, .slide-fade-leave-active {
-    transform: translatey(0.8rem);
+    transform: translatey(1rem);
     opacity: 0;
   }
 </style>
