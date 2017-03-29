@@ -4,6 +4,7 @@ html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  height: 100%;
 }
 body {
   margin: 0;
@@ -12,7 +13,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   background: #f9f9f9;
+  height: 100%;
 }
+/**
+ * 重置样式
+ */
 article,
 aside,
 footer,
@@ -25,10 +30,7 @@ h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
-p, ul {
-  margin: 0;
-  padding: 0;
-}
+
 figcaption,
 figure,
 main {
@@ -207,4 +209,12 @@ template {
 }
 [hidden] {
   display: none;
+}
+
+/**
+ * 公共样式
+ */
+p, ul, h3 {
+  margin: 0;
+  padding: 0;
 }

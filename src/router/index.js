@@ -4,9 +4,9 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import Index from '@/pages/Index'
-import Essence from '@/pages/essence'
-import QA from '@/pages/qa'
-import Share from '@/pages/share'
+import Topic from '@/pages/Topic'
+import About from '@/pages/About'
+import Info from '@/pages/Info'
 
 const scrollBehavior = (to, from, savedPosition) => {
   if (savedPosition) {
@@ -24,14 +24,25 @@ const scrollBehavior = (to, from, savedPosition) => {
   }
 }
 
+// export default new Router({
+//   mode: 'history',
+//   scrollBehavior,
+//   routes: [
+//     { path: '/index', name: 'Index', component: Index },
+//     { path: '/topic', name: 'Topic', component: Topic },
+//     { path: '/about', name: 'About', component: About },
+//     { path: '/info', name: 'Info', component: Info },
+//     { path: '/', redirect: '/index' }
+//   ]
+// })
 export default new Router({
   mode: 'history',
   scrollBehavior,
   routes: [
-    { path: '/index', name: 'Index', component: Index },
-    { path: '/essence', name: 'Essence', component: Essence },
-    { path: '/qa', name: 'QA', component: QA },
-    { path: '/share', name: 'Share', component: Share },
-    { path: '/', redirect: '/index' }
+    { path: '/cnodejs/index', name: 'Index', component: Index },
+    { path: '/cnodejs/topic', name: 'Topic', component: Topic },
+    { path: '/cnodejs/about', name: 'About', component: About },
+    { path: '/cnodejs/info', name: 'Info', component: Info },
+    { path: '/cnodejs/', redirect: '/cnodejs/index' }
   ]
 })

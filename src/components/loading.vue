@@ -15,6 +15,8 @@
 </script>
 
 <style lang="scss" scoped>
+  $greend: #42b983;
+
   .loading-wrap {
     position: fixed;
     top: 0;
@@ -30,7 +32,7 @@
     .icon-loading {
       width: 1rem;
       height: 1rem;
-      color: #03a9f4;
+      color: $greend;
       animation: load .8s linear infinite;
       -webkit-animation: load .8s linear infinite;
     }
